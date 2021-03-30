@@ -44,4 +44,4 @@ app.get('/login',(rew,res)=>{
     res.sendFile(__dirname+'/public/hospital.html')
 })
   
-app.listen(3000)
+app.listen(process.env.PORT || 3000)
