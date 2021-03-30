@@ -8,14 +8,18 @@ var upload = multer({ dest: 'uploads/' })
 
 var ipfsAPI = require('ipfs-api')
 var ipfs = ipfsAPI('ipfs.infura.io', '5001', {protocol: 'https'})
- 
+app.use(express.static(__dirname+'/public'));
+app.use('/css',express.static(__dirname+'/public/css'))
+app.use('/img',express.static(__dirname+'public/doctor.svg'))
 app.get('/', function (req, res) {
 //   res.send('Hello World')
-    res.sendFile(__dirname+'/public/index.html');
+    //res.sendFile(__dirname+'/public/ipfs.html');
+     res.sendFile(__dirname+'/public/Hospital.html')
 })
-app.get('/hospital',(req,res)=>{
-    res.sendFile(__dirname+'/public/hospital.html')
+app.get('/ipfs',(req,res)=>{
+    res.sendFile(__dirname+'/public/ipfs.html')
 })
+
 app.post('/profile', upload.single('avatar'), function (req, res, next) {
     // req.file is the `avatar` file
     // req.body will hold the text fields, if there were any
@@ -36,4 +40,8 @@ app.post('/profile', upload.single('avatar'), function (req, res, next) {
       res.redirect('https://ipfs.io/ipfs/'+req.params.ID);
   })
  
+app.get('/login',(rew,res)=>{
+    res.sendFile(__dirname+'/public/hospital.html')
+})
+  
 app.listen(3000)
