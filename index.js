@@ -43,5 +43,7 @@ app.post('/profile', upload.single('avatar'), function (req, res, next) {
 app.get('/login',(rew,res)=>{
     res.sendFile(__dirname+'/public/hospital.html')
 })
-  
+app.get('/Register',(req,res)=>{
+        res.sendFile(__dirname+'/public/Register.html')
+})
 app.listen(process.env.PORT || 3000)

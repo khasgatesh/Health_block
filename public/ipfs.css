@@ -52,3 +52,8 @@ body {
       float: none;
     }
   }
+
+  .btn-primary{
+    background-color:#63FFC1;
+    border: none;
+  }
