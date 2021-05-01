@@ -40,10 +40,13 @@ app.post('/profile', upload.single('avatar'), function (req, res, next) {
       res.redirect('https://ipfs.io/ipfs/'+req.params.ID);
   })
  
-app.get('/login',(rew,res)=>{
+app.get('/login',(req,res)=>{
     res.sendFile(__dirname+'/public/hospital.html')
 })
 app.get('/Register',(req,res)=>{
         res.sendFile(__dirname+'/public/Register.html')
+})
+app.get('/Doctor',(req,res)=>{
+    res.sendFile(__dirname+'/public/Doctor.html')
 })
 app.listen(process.env.PORT || 3000)

@@ -132,14 +132,13 @@
       firebase.auth().createUserWithEmailAndPassword(email,password)
       .then((userCredentail)=>{
         var user=userCredentail.user;
+        console.log("jjvdc")
+        location.assign('/login')
       })
      .then(
-      location.assign('/login')).catch((error)=>{
-        console.error(error)
-      }
-
-      )
-    })
+      location.assign('/login'))
+      })
+  
     
 
   </script>
