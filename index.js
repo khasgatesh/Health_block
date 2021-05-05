@@ -41,7 +41,7 @@ app.post('/profile', upload.single('avatar'), function (req, res, next) {
   })
  
 app.get('/login',(req,res)=>{
-    res.sendFile(__dirname+'/public/hospital.html')
+    res.sendFile(__dirname+'/public/Hospital.html')
 })
 app.get('/Register',(req,res)=>{
         res.sendFile(__dirname+'/public/Register.html')
