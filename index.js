@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-
+const port=process.env.PORT
 const fs =require('fs');
 
 var multer  = require('multer')
@@ -49,4 +49,5 @@ app.get('/Register',(req,res)=>{
 app.get('/Doctor',(req,res)=>{
     res.sendFile(__dirname+'/public/Doctor.html')
 })
-app.listen(process.env.PORT || 5000)
+app.listen(port || 5000)
+
