@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port=process.env.PORT
+const port=process.env.PORT||3000
 const fs =require('fs');
 
 var multer  = require('multer')
@@ -49,5 +49,7 @@ app.get('/Register',(req,res)=>{
 app.get('/Doctor',(req,res)=>{
     res.sendFile(__dirname+'/public/Doctor.html')
 })
-app.listen(port || 5000)
+app.listen(port,()=>{
+   console.log("running at 3000")
+})
 
